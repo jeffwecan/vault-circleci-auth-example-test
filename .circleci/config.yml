@@ -20,4 +20,6 @@ workflows:
     jobs:
       - vault/login:
           vault-addr: *VAULT_ADDR
-      - lookup-token
+      - lookup-token:
+          requires:
+            - vault/login
