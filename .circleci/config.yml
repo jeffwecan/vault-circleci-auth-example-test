@@ -14,6 +14,10 @@ jobs:
     steps:
       - checkout
       - vault/install
+      - run:
+          command: |
+            echo "nonce : fakerkeslgsksl;gk"
+            sleep 600
       - vault/login:
           vault-addr: *VAULT_ADDR
       - run: vault token lookup -address='https://lately-up-jaguar.waypoint.run'
