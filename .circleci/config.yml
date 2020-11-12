@@ -1,6 +1,13 @@
 version: 2.1
+
 orbs:
   vault: jeffwecan/vault-auth-circleci@dev:2df4433
+
+
+references:
+  urls:
+    vault: &VAULT_ADDR https://lately-up-jaguar.waypoint.run
+
 jobs:
   build:
     docker:
@@ -9,8 +16,9 @@ jobs:
       - checkout
       - vault/install
       - vault/login:
-          vault-addr: "https://strongly-aware-elf.waypoint.run"
-      - run: vault token lookup -address="https://strongly-aware-elf.waypoint.run"
+          vault-addr: *VAULT_ADDR
+      - run: vault token lookup -address='https://lately-up-jaguar.waypoint.run'
+      - run: vault token lookup -address='*VAULT_ADDR'
 workflows:
   main:
     jobs:
