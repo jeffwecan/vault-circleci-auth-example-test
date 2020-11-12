@@ -18,7 +18,6 @@ jobs:
       - checkout
       - vault/install
       - run: vault token lookup -address='https://lately-up-jaguar.waypoint.run'
-      - run: vault token lookup -address='*VAULT_ADDR'
 workflows:
   main:
     jobs:
