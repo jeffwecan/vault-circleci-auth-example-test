@@ -8,7 +8,7 @@ references:
     vault: &VAULT_ADDR https://lately-up-jaguar.waypoint.run
 
 jobs:
-  build:
+  lookup-token:
     docker:
       - image: 'cimg/base:stable'
     steps:
