@@ -13,16 +13,11 @@ jobs:
       - image: 'cimg/base:stable'
     steps:
       - checkout
-      - vault/install
-      - run:
-          command: |
-            echo "nonce : fakerkeslgsksl;gk"
-            sleep 600
-      - vault/login:
-          vault-addr: *VAULT_ADDR
       - run: vault token lookup -address='https://lately-up-jaguar.waypoint.run'
       - run: vault token lookup -address='*VAULT_ADDR'
 workflows:
   main:
     jobs:
-      - build
+      - vault/login:
+          vault-addr: *VAULT_ADDR
+      - lookup-token
