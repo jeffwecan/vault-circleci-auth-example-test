@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  vault: jeffwecan/vault-auth-circleci@dev:2df4433
+  vault: jeffwecan/vault-auth-circleci@dev:5f4fa63
 
 
 references:
